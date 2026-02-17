@@ -5,34 +5,34 @@ import { useInView } from "react-intersection-observer";
 
 const services = [
   {
-    title: "AI Agents & Automation",
+    title: "ai agents & automation",
     description:
-      "Custom-built AI agents and autonomous workflows that integrate with your business to reduce costs and increase intelligence.",
+      "custom-built ai agents and autonomous workflows that integrate with your business to reduce costs and increase intelligence.",
   },
   {
-    title: "Web3 Engineering",
+    title: "web3 engineering",
     description:
-      "Secure Smart Contracts (Solidity/Rust) and scalable DApp architectures built on industry-leading security standards.",
+      "secure smart contracts (solidity/rust) and scalable dapp architectures built on industry-leading security standards.",
   },
   {
-    title: "Digital Strategy & Growth",
+    title: "digital strategy & growth",
     description:
-      "Specialized marketing and GTM strategies for Web3 projects to build community and scale presence.",
+      "specialized marketing and gtm strategies for web3 projects to build community and scale presence.",
   },
   {
-    title: "MVP Development",
+    title: "mvp development",
     description:
-      "We turn complex ideas into functional prototypes in weeks, not months. Perfect for Canadian startups looking to raise seed funding.",
+      "we turn complex ideas into functional prototypes in weeks, not months. perfect for canadian startups looking to raise seed funding.",
   },
   {
-    title: "Mobile & Web Engineering",
+    title: "mobile & web engineering",
     description:
-      "Seamless user experiences across all devices. Whether it's a crypto wallet or a consumer tech app, we build pixel-perfect mobile solutions",
+      "seamless user experiences across all devices. whether it's a crypto wallet or a consumer tech app, we build pixel-perfect mobile solutions",
   },
-  {
-    title: "Full-Stack Enterprise",
+ {
+    title: "full-stack enterprise",
     description:
-      "From secure cloud backends to intuitive interfaces, we deliver enterprise-grade software that is ready for the demands of 2026 and beyond.",
+      "from secure cloud backends to intuitive interfaces, we deliver enterprise-grade software that is ready for the demands of 2026 and beyond.",
   },
 ];
 

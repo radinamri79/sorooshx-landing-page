@@ -6,10 +6,10 @@ import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 const navLinks = [
-  { label: "Projects", href: "/#projects" },
-  { label: "Services", href: "/#services" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/#about" },
+  { label: "projects", href: "/#projects" },
+  { label: "services", href: "/#services" },
+  { label: "blog", href: "/blog" },
+  { label: "about", href: "/#about" },
 ];
 
 export default function Header() {
@@ -129,7 +129,7 @@ export default function Header() {
             onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
             onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
           >
-            Contact
+            contact
           </button>
         </nav>
 
@@ -214,7 +214,7 @@ export default function Header() {
                   letterSpacing: "-0.4px",
                 }}
               >
-                Contact
+                contact
               </button>
             </div>
           </motion.nav>

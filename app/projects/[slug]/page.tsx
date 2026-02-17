@@ -52,7 +52,7 @@ export default async function ProjectDetailPage({
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
           {/* Project name label */}
           <h2
-            className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-6 sm:mb-8"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 sm:mb-8"
             style={{ fontFamily: "var(--font-heading)", color: "#ffffff" }}
           >
             {project.title}
@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({
 
           {/* Headline */}
           <h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-snug mb-8 sm:mb-10"
+            className="text-lg sm:text-xl md:text-2xl font-light leading-snug mb-8 sm:mb-10"
             style={{
               fontFamily: "var(--font-body)",
               color: "rgba(255,255,255,0.9)",
@@ -168,7 +168,7 @@ export default async function ProjectDetailPage({
             }}
           >
             <span className="font-semibold" style={{ color: "rgba(255,255,255,0.95)" }}>
-              The Challenge:{" "}
+              the challenge:{" "}
             </span>
             {project.problem}
           </p>
@@ -188,7 +188,7 @@ export default async function ProjectDetailPage({
             }}
           >
             <span className="font-semibold" style={{ color: "rgba(255,255,255,0.95)" }}>
-              The CODEFI Solution:{" "}
+              the codefi solution:{" "}
             </span>
             {project.solution}
           </p>

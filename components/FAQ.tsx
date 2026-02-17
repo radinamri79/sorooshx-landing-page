@@ -6,34 +6,34 @@ import { useInView } from "react-intersection-observer";
 
 const faqs = [
   {
-    question: "What makes CODEFI different from a traditional dev agency?",
+    question: "what makes codefi different from a traditional dev agency?",
     answer:
-      "We specialize at the intersection of Web3, AI, and enterprise software. Our team combines deep technical expertise with startup agility to deliver production-grade solutions faster than traditional agencies.",
+      "we specialize at the intersection of web3, ai, and enterprise software. our team combines deep technical expertise with startup agility to deliver production-grade solutions faster than traditional agencies.",
   },
   {
-    question: "How do you ensure the security of Smart Contracts?",
+    question: "how do you ensure the security of smart contracts?",
     answer:
-      "Every smart contract undergoes rigorous internal audits, formal verification where applicable, and third-party security reviews before deployment. We follow industry best practices including OpenZeppelin standards.",
+      "every smart contract undergoes rigorous internal audits, formal verification where applicable, and third-party security reviews before deployment. we follow industry best practices including openzeppelin standards.",
   },
   {
-    question: "Can you integrate AI into our existing legacy systems?",
+    question: "can you integrate ai into our existing legacy systems?",
     answer:
-      "Absolutely. We specialize in building AI agents and automation layers that integrate seamlessly with your existing infrastructure, enabling intelligent workflows without requiring a complete system overhaul.",
+      "absolutely. we specialize in building ai agents and automation layers that integrate seamlessly with your existing infrastructure, enabling intelligent workflows without requiring a complete system overhaul.",
   },
   {
-    question: "What is your typical project timeline for an MVP?",
+    question: "what is your typical project timeline for an mvp?",
     answer:
-      "Most MVPs are delivered within 6-12 weeks depending on complexity. We follow agile sprints with weekly demos so you can see progress and provide feedback throughout the development cycle.",
+      "most mvps are delivered within 6-12 weeks depending on complexity. we follow agile sprints with weekly demos so you can see progress and provide feedback throughout the development cycle.",
   },
   {
-    question: "Does CODEFI offer ongoing support after launch?",
+    question: "does codefi offer ongoing support after launch?",
     answer:
-      "Yes. We offer dedicated maintenance and support packages including monitoring, bug fixes, feature updates, and scaling assistance to ensure your product continues to perform at its best.",
+      "yes. we offer dedicated maintenance and support packages including monitoring, bug fixes, feature updates, and scaling assistance to ensure your product continues to perform at its best.",
   },
   {
-    question: "How do we start a project with CODEFI?",
+    question: "how do we start a project with codefi?",
     answer:
-      "Simply reach out through our contact form or book an appointment. We'll schedule a discovery call to understand your vision, then provide a detailed proposal with timeline and investment breakdown.",
+      "simply reach out through our contact form or book an appointment. we'll schedule a discovery call to understand your vision, then provide a detailed proposal with timeline and investment breakdown.",
   },
 ];
 

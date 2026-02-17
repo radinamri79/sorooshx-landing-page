@@ -44,13 +44,13 @@ export default function About() {
                 color: "rgba(255,255,255,1)",
               }}
             >
-              Founded in the heart of Canada&apos;s tech ecosystem, CODEFI is a
+              founded in the heart of canada&apos;s tech ecosystem, codefi is a
               high-end engineering studio where sophisticated software meets the
-              decentralized future. We don&apos;t just build applications; we
-              architect intelligent ecosystems. By fusing the immutable security
-              of Web3 with the autonomous power of AI, we empower enterprises
+              decentralized future. we don&apos;t just build applications; we
+              architect intelligent ecosystems. by fusing the immutable security
+              of web3 with the autonomous power of ai, we empower enterprises
               and startups to transition from legacy systems to the forefront of
-              the digital economy. At CODEFI, we code with precision, design
+              the digital economy. at codefi, we code with precision, design
               with intent, and build for scale.
             </motion.p>
 

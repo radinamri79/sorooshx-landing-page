@@ -37,25 +37,25 @@ export const allProjects: Project[] = [
   {
     slug: "sorooshx",
     year: "2022",
-    category: "Web3 & SocialFi",
+    category: "web3 & socialfi",
     title: "sorooshx",
     headline:
-      "Engineering a High-Performance SocialFi Ecosystem for 100K+ Users.",
+      "engineering a high-performance socialfi ecosystem for 100k+ users.",
     projectUrl: "#",
     mainBg: "#FF6200",
     imageBg: "#F05400",
     darkText: true,
     image: "/iMockup - iPhone 15 Pro Max.png",
     overview:
-      "SorooshX is a premier Smart SocialFi Exchange designed to bridge the gap between master traders and the global community. It is a platform where education, real-time signals, and decentralized trading converge. CODEFI has been the core development partner for over 5 years, evolving the platform from a visionary concept into a scaling powerhouse that processes $100M+ in weekly trading volume.",
+      "sorooshx is a premier smart socialfi exchange designed to bridge the gap between master traders and the global community. it is a platform where education, real-time signals, and decentralized trading converge. codefi has been the core development partner for over 5 years, evolving the platform from a visionary concept into a scaling powerhouse that processes $100m+ in weekly trading volume.",
     problem:
-      "Building a platform that combines the high-speed requirements of a crypto exchange with the social engagement of a content platform, all while maintaining absolute security for 100K users.",
+      "building a platform that combines the high-speed requirements of a crypto exchange with the social engagement of a content platform, all while maintaining absolute security for 100k users.",
     solution:
-      "We provided a Full-Stack Engineering & Marketing lifecycle. This included designing a secure multi-chain wallet infrastructure, a high-concurrency trading engine, and a social layer where master traders can monetize their expertise. We managed the transition from MVP to a massive scale, ensuring the architecture remained resilient under high volatility.",
+      "we provided a full-stack engineering & marketing lifecycle. this included designing a secure multi-chain wallet infrastructure, a high-concurrency trading engine, and a social layer where master traders can monetize their expertise. we managed the transition from mvp to a massive scale, ensuring the architecture remained resilient under high volatility.",
     meta: [
-      { label: "industry", value: "SocialFi / Web3 / Fintech" },
-      { label: "role", value: "Lead Engineering & Strategy Partner" },
-      { label: "Timeline", value: "5+ Years (Long-term Partnership)" },
+      { label: "industry", value: "socialfi / web3 / fintech" },
+      { label: "role", value: "lead engineering & strategy partner" },
+      { label: "timeline", value: "5+ years (long-term partnership)" },
       {
         label: "service",
         value:
@@ -63,31 +63,31 @@ export const allProjects: Project[] = [
       },
     ],
     metrics: [
-      { value: "100K", label: "Registered Active Users" },
-      { value: "$100M", label: "Weekly Trading Volume" },
-      { value: "5years", label: "Full-Cycle Development" },
-      { value: "$0", label: "Security Breaches\n(Maintained Integrity)" },
+      { value: "100k", label: "registered active users" },
+      { value: "$100m", label: "weekly trading volume" },
+      { value: "5 years", label: "full-cycle development" },
+      { value: "$0", label: "security breaches\n(maintained integrity)" },
     ],
     stack: [
       {
-        title: "Mobile",
+        title: "mobile",
         description:
-          "Hybrid-Native Architecture using React Native with custom Native Modules (Swift/Kotlin) for maximum performance.",
+          "hybrid-native architecture using react native with custom native modules (swift/kotlin) for maximum performance.",
       },
       {
-        title: "Web",
+        title: "web",
         description:
-          "Next.js for a lightning-fast, SEO-optimized front-end.",
+          "next.js for a lightning-fast, seo-optimized front-end.",
       },
       {
-        title: "Back-end",
+        title: "back-end",
         description:
-          "A high-performance microservices architecture powered by Rust (for trading logic), Django (for robust API management), and Serverless infrastructures for elastic scaling.",
+          "a high-performance microservices architecture powered by rust (for trading logic), django (for robust api management), and serverless infrastructures for elastic scaling.",
       },
       {
-        title: "Web3 Integration",
+        title: "web3 integration",
         description:
-          "Secure Smart Contracts and DApp layers for rewards and on-chain growth.",
+          "secure smart contracts and dapp layers for rewards and on-chain growth.",
       },
     ],
     galleryColors: ["#FF6200", "#00FF77", "#2563EB", "#FFDEAD"],
@@ -95,56 +95,56 @@ export const allProjects: Project[] = [
   {
     slug: "doyo",
     year: "2025",
-    category: "AI Agent",
+    category: "ai agent",
     title: "doyo",
     headline:
-      "Building an Intelligent AI Agent for Personalized Financial Insights.",
+      "building an intelligent ai agent for personalized financial insights.",
     projectUrl: "#",
     mainBg: "#FFDD00",
     imageBg: "#FFC300",
     darkText: true,
     image: "/Doyo.png",
     overview:
-      "Doyo is an AI-powered financial assistant that delivers personalized market insights, portfolio analysis, and trading signals through natural language interaction. CODEFI designed and built the entire platform from concept to market-ready product in record time.",
+      "doyo is an ai-powered financial assistant that delivers personalized market insights, portfolio analysis, and trading signals through natural language interaction. codefi designed and built the entire platform from concept to market-ready product in record time.",
     problem:
-      "Creating an AI agent that can process real-time market data, understand user portfolios, and deliver actionable financial advice through a conversational interface — while maintaining regulatory compliance.",
+      "creating an ai agent that can process real-time market data, understand user portfolios, and deliver actionable financial advice through a conversational interface — while maintaining regulatory compliance.",
     solution:
-      "We architected a modular AI pipeline combining LLM orchestration with real-time data feeds, custom fine-tuned models for financial sentiment analysis, and a secure user-data layer. The system processes thousands of concurrent queries while maintaining sub-second response times.",
+      "we architected a modular ai pipeline combining llm orchestration with real-time data feeds, custom fine-tuned models for financial sentiment analysis, and a secure user-data layer. the system processes thousands of concurrent queries while maintaining sub-second response times.",
     meta: [
-      { label: "industry", value: "AI / Fintech / SaaS" },
-      { label: "role", value: "Full-Stack Development Partner" },
-      { label: "Timeline", value: "8 Months (Rapid Delivery)" },
+      { label: "industry", value: "ai / fintech / saas" },
+      { label: "role", value: "full-stack development partner" },
+      { label: "timeline", value: "8 months (rapid delivery)" },
       {
         label: "service",
-        value: "product design / AI engineering / full-stack development",
+        value: "product design / ai engineering / full-stack development",
       },
     ],
     metrics: [
-      { value: "50K", label: "Beta Users" },
-      { value: "95%", label: "Query Accuracy" },
-      { value: "<1s", label: "Response Time" },
-      { value: "24/7", label: "Market Coverage" },
+      { value: "50k", label: "beta users" },
+      { value: "95%", label: "query accuracy" },
+      { value: "<1s", label: "response time" },
+      { value: "24/7", label: "market coverage" },
     ],
     stack: [
       {
-        title: "AI/ML",
+        title: "ai/ml",
         description:
-          "Custom LLM orchestration with RAG pipelines, fine-tuned models for financial sentiment analysis.",
+          "custom llm orchestration with rag pipelines, fine-tuned models for financial sentiment analysis.",
       },
       {
-        title: "Web",
+        title: "web",
         description:
-          "React with real-time streaming UI for conversational AI interactions.",
+          "react with real-time streaming ui for conversational ai interactions.",
       },
       {
-        title: "Back-end",
+        title: "back-end",
         description:
-          "Python microservices with FastAPI, real-time market data ingestion, and caching layers.",
+          "python microservices with fastapi, real-time market data ingestion, and caching layers.",
       },
       {
-        title: "Infrastructure",
+        title: "infrastructure",
         description:
-          "Kubernetes-based deployment with auto-scaling for handling traffic spikes during market events.",
+          "kubernetes-based deployment with auto-scaling for handling traffic spikes during market events.",
       },
     ],
     galleryColors: ["#FFDD00", "#FF6200", "#1F00FF", "#FF003B"],
@@ -152,55 +152,55 @@ export const allProjects: Project[] = [
   {
     slug: "bitvpn",
     year: "2020",
-    category: "Decentralized VPN",
+    category: "decentralized vpn",
     title: "bitvpn",
     headline:
-      "Architecting a Decentralized VPN Network for Privacy-First Internet Access.",
+      "architecting a decentralized vpn network for privacy-first internet access.",
     projectUrl: "#",
     mainBg: "#1F00FF",
     imageBg: "#FFFFFF",
     darkText: false,
     overview:
-      "BitVPN is a decentralized virtual private network that leverages blockchain technology to provide censorship-resistant, anonymous internet access. CODEFI built the core infrastructure from protocol design to consumer-facing applications.",
+      "bitvpn is a decentralized virtual private network that leverages blockchain technology to provide censorship-resistant, anonymous internet access. codefi built the core infrastructure from protocol design to consumer-facing applications.",
     problem:
-      "Traditional VPNs rely on centralized servers that can be compromised, censored, or monitored. Building a truly decentralized network that maintains performance while ensuring anonymity required novel protocol design.",
+      "traditional vpns rely on centralized servers that can be compromised, censored, or monitored. building a truly decentralized network that maintains performance while ensuring anonymity required novel protocol design.",
     solution:
-      "We developed a peer-to-peer relay network with blockchain-based node incentivization, encrypted traffic routing through a multi-hop architecture, and native applications across all major platforms with one-tap connection simplicity.",
+      "we developed a peer-to-peer relay network with blockchain-based node incentivization, encrypted traffic routing through a multi-hop architecture, and native applications across all major platforms with one-tap connection simplicity.",
     meta: [
-      { label: "industry", value: "Privacy / Web3 / Security" },
-      { label: "role", value: "Lead Engineering Partner" },
-      { label: "Timeline", value: "2+ Years" },
+      { label: "industry", value: "privacy / web3 / security" },
+      { label: "role", value: "lead engineering partner" },
+      { label: "timeline", value: "2+ years" },
       {
         label: "service",
         value: "protocol design / full-stack development / mobile apps",
       },
     ],
     metrics: [
-      { value: "200K", label: "Downloads" },
-      { value: "50+", label: "Server Locations" },
-      { value: "0", label: "Data Logs Kept" },
-      { value: "99.9%", label: "Uptime Guarantee" },
+      { value: "200k", label: "downloads" },
+      { value: "50+", label: "server locations" },
+      { value: "0", label: "data logs kept" },
+      { value: "99.9%", label: "uptime guarantee" },
     ],
     stack: [
       {
-        title: "Mobile",
+        title: "mobile",
         description:
-          "Native iOS (Swift) and Android (Kotlin) apps with custom VPN tunnel implementations.",
+          "native ios (swift) and android (kotlin) apps with custom vpn tunnel implementations.",
       },
       {
-        title: "Protocol",
+        title: "protocol",
         description:
-          "Custom WireGuard-based protocol with multi-hop relay routing for enhanced privacy.",
+          "custom wireguard-based protocol with multi-hop relay routing for enhanced privacy.",
       },
       {
-        title: "Back-end",
+        title: "back-end",
         description:
-          "Go-based relay infrastructure with distributed node coordination and health monitoring.",
+          "go-based relay infrastructure with distributed node coordination and health monitoring.",
       },
       {
-        title: "Blockchain",
+        title: "blockchain",
         description:
-          "Smart contract-based node incentivization and bandwidth marketplace on Ethereum L2.",
+          "smart contract-based node incentivization and bandwidth marketplace on ethereum l2.",
       },
     ],
     galleryColors: ["#1F00FF", "#FF6200", "#FFDD00", "#FF003B"],
@@ -208,56 +208,56 @@ export const allProjects: Project[] = [
   {
     slug: "coco-ai",
     year: "2026",
-    category: "Smart Financial AI",
+    category: "smart financial ai",
     title: "coco ai",
     headline:
-      "Designing an AI-Driven Platform for Automated Portfolio Management.",
+      "designing an ai-driven platform for automated portfolio management.",
     projectUrl: "#",
     mainBg: "#FF003B",
     imageBg: "#FFFFFF",
     darkText: false,
     overview:
-      "Coco AI is an intelligent portfolio management platform that uses machine learning to automate investment strategies, risk assessment, and rebalancing. CODEFI is building the platform from the ground up with a focus on institutional-grade reliability.",
+      "coco ai is an intelligent portfolio management platform that uses machine learning to automate investment strategies, risk assessment, and rebalancing. codefi is building the platform from the ground up with a focus on institutional-grade reliability.",
     problem:
-      "Automated portfolio management systems often lack transparency and adaptability. Building a platform that provides institutional-level risk management while remaining accessible to retail investors required innovative AI/UX design.",
+      "automated portfolio management systems often lack transparency and adaptability. building a platform that provides institutional-level risk management while remaining accessible to retail investors required innovative ai/ux design.",
     solution:
-      "We designed a transparent AI engine that explains its investment decisions, combined with a real-time risk monitoring dashboard and customizable strategy builder. The platform adapts to market regime changes and user risk profiles dynamically.",
+      "we designed a transparent ai engine that explains its investment decisions, combined with a real-time risk monitoring dashboard and customizable strategy builder. the platform adapts to market regime changes and user risk profiles dynamically.",
     meta: [
-      { label: "industry", value: "AI / Fintech / Investment" },
-      { label: "role", value: "Technical Co-founder & Engineering Partner" },
-      { label: "Timeline", value: "Ongoing (2026 Launch)" },
+      { label: "industry", value: "ai / fintech / investment" },
+      { label: "role", value: "technical co-founder & engineering partner" },
+      { label: "timeline", value: "ongoing (2026 launch)" },
       {
         label: "service",
         value:
-          "product strategy / AI engineering / full-stack development / DevOps",
+          "product strategy / ai engineering / full-stack development / devops",
       },
     ],
     metrics: [
-      { value: "Beta", label: "Current Phase" },
-      { value: "15%+", label: "Target Annual Return" },
-      { value: "ML", label: "Risk Models" },
-      { value: "Multi", label: "Asset Classes" },
+      { value: "beta", label: "current phase" },
+      { value: "15%+", label: "target annual return" },
+      { value: "ml", label: "risk models" },
+      { value: "multi", label: "asset classes" },
     ],
     stack: [
       {
-        title: "AI/ML",
+        title: "ai/ml",
         description:
-          "Reinforcement learning for strategy optimization, NLP for market sentiment, and explainable AI for transparency.",
+          "reinforcement learning for strategy optimization, nlp for market sentiment, and explainable ai for transparency.",
       },
       {
-        title: "Web",
+        title: "web",
         description:
-          "Next.js dashboard with real-time portfolio visualization and interactive strategy builder.",
+          "next.js dashboard with real-time portfolio visualization and interactive strategy builder.",
       },
       {
-        title: "Back-end",
+        title: "back-end",
         description:
-          "Python-based quantitative engine with Rust-powered execution layer for low-latency trading.",
+          "python-based quantitative engine with rust-powered execution layer for low-latency trading.",
       },
       {
-        title: "Data",
+        title: "data",
         description:
-          "Real-time market data pipelines, historical backtesting infrastructure, and ML feature stores.",
+          "real-time market data pipelines, historical backtesting infrastructure, and ml feature stores.",
       },
     ],
     galleryColors: ["#FF003B", "#FF6200", "#FFDD00", "#1F00FF"],
