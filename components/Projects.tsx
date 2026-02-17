@@ -8,7 +8,8 @@ interface Project {
   category: string;
   title: string;
   href: string;
-  color: string;
+  mainBg: string;
+  imageBg: string;
   image?: string;
 }
 
@@ -18,60 +19,71 @@ const projects: Project[] = [
     category: "Web3 & SocialFi",
     title: "sorooshx",
     href: "#",
-    color: "#FF6200",
+    mainBg: "#FF6200",
+    imageBg: "#F05400",
+    image: "/iMockup - iPhone 15 Pro Max.png",
   },
   {
     year: "2025",
     category: "AI Agent",
     title: "doyo",
     href: "#",
-    color: "#6366F1",
+    mainBg: "#FFDD00",
+    imageBg: "#FFC300",
+    image: "/Doyo.png",
   },
   {
     year: "2020",
     category: "Decentralized VPN",
     title: "bitvpn",
     href: "#",
-    color: "#00FF77",
+    mainBg: "#1F00FF",
+    imageBg: "#FFFFFF",
   },
   {
     year: "2026",
     category: "Smart Financial AI",
     title: "coco ai",
     href: "#",
-    color: "#FACC15",
+    mainBg: "#FF003B",
+    imageBg: "#FFFFFF",
   },
 ];
 
 function StickyCard({
   project,
   index,
-  total,
 }: {
   project: Project;
   index: number;
-  total: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "start start"],
   });
-  const arrowRotate = useTransform(scrollYProgress, [0, 1], [0, 45]);
+  // Arrow starts pointing right (0°), rotates to 45° up-right when card reaches top
+  const arrowRotate = useTransform(scrollYProgress, [0, 1], [0, -45]);
 
-  // Each card sticks a bit lower so they visibly stack
-  const stickyTop = 83 + index * 12;
+  // Each card sticks slightly lower to peek above previous
+  const stickyTop = 83 + index * 10;
+
+  // Dark text for light backgrounds (doyo yellow)
+  const isDark = project.mainBg === "#FFDD00";
+  const textColor = isDark ? "#000000" : "#ffffff";
+  const metaColor = isDark ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.5)";
+  const strokeColor = isDark ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.5)";
 
   return (
     <div
       ref={cardRef}
-      className="h-[90vh]"
-      style={{ zIndex: index + 1 }}
+      style={{ height: "100vh", zIndex: index + 1, position: "relative" }}
     >
       <motion.a
         href={project.href}
-        className="sticky block w-full cursor-pointer group"
+        className="group block w-full cursor-pointer"
         style={{
+          position: "sticky",
           top: `${stickyTop}px`,
           textDecoration: "none",
         }}
@@ -79,9 +91,10 @@ function StickyCard({
         <div
           className="rounded-2xl p-8 md:p-12 overflow-hidden"
           style={{
-            backgroundColor: project.color + "0D",
-            border: `1px solid ${project.color}20`,
-            minHeight: "70vh",
+            backgroundColor: project.mainBg,
+            height: `calc(100vh - ${stickyTop + 20}px)`,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           {/* Meta row */}
@@ -91,7 +104,7 @@ function StickyCard({
                 fontFamily: "var(--font-body)",
                 fontSize: "12px",
                 fontWeight: 300,
-                color: "rgba(255,255,255,0.5)",
+                color: metaColor,
               }}
             >
               {project.year}
@@ -101,7 +114,7 @@ function StickyCard({
                 fontFamily: "var(--font-body)",
                 fontSize: "12px",
                 fontWeight: 300,
-                color: "rgba(255,255,255,0.5)",
+                color: metaColor,
               }}
             >
               {project.category}
@@ -109,13 +122,13 @@ function StickyCard({
           </div>
 
           {/* Title + arrow */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6">
             <h3
               style={{
                 fontFamily: "var(--font-heading)",
                 fontSize: "clamp(32px, 5vw, 56px)",
                 fontWeight: 600,
-                color: "#ffffff",
+                color: textColor,
                 letterSpacing: "-0.5px",
                 lineHeight: 1.1,
               }}
@@ -127,49 +140,49 @@ function StickyCard({
               className="flex-shrink-0 ml-4"
               style={{ rotate: arrowRotate }}
             >
+              {/* Arrow pointing right → */}
               <svg
                 width="36"
                 height="36"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="rgba(255,255,255,0.5)"
+                stroke={strokeColor}
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="group-hover:stroke-white transition-colors duration-300"
+                className="transition-colors duration-300"
               >
-                <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" />
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
               </svg>
             </motion.div>
           </div>
 
           {/* Image area */}
           <div
-            className="w-full aspect-[16/9] rounded-xl overflow-hidden relative"
+            className="flex-1 w-full rounded-xl overflow-hidden relative flex items-center justify-center"
             style={{
-              backgroundColor: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.05)",
+              backgroundColor: project.imageBg,
+              minHeight: 0,
             }}
           >
             {project.image ? (
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="h-full object-contain"
+                style={{ maxHeight: "100%", maxWidth: "100%" }}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: "14px",
-                    color: "rgba(255,255,255,0.15)",
-                  }}
-                >
-                  {project.title}
-                </span>
-              </div>
+              <span
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "14px",
+                  color: "rgba(0,0,0,0.15)",
+                }}
+              >
+                {project.title}
+              </span>
             )}
           </div>
         </div>
@@ -187,7 +200,6 @@ export default function Projects() {
             key={project.title}
             project={project}
             index={i}
-            total={projects.length}
           />
         ))}
       </div>

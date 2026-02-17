@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "#about" },
 ];
 
@@ -23,8 +24,12 @@ export default function Header() {
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = href;
+    }
   };
 
   return (
