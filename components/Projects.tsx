@@ -55,141 +55,135 @@ const projects: Project[] = [
   },
 ];
 
-const HEADER_HEIGHT = 83;
-const CARD_GAP = 10;
+const STICKY_TOP = 90;
 
 function StickyCard({
   project,
   index,
-  total,
 }: {
   project: Project;
   index: number;
-  total: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["start end", "start start"],
+    offset: ["start end", "end start"],
   });
 
-  // Arrow: starts right (→) at 0°, rotates to upper-right (↗) at -45°
-  const arrowRotate = useTransform(scrollYProgress, [0.5, 1], [0, -45]);
+  // Arrow: starts right (→), rotates to upper-right (↗) when card is fully in view
+  const arrowRotate = useTransform(scrollYProgress, [0.2, 0.45], [0, -45]);
 
-  const stickyTop = HEADER_HEIGHT + index * CARD_GAP;
   const textColor = project.darkText ? "#000000" : "#ffffff";
-  const metaColor = project.darkText
-    ? "rgba(0,0,0,0.5)"
-    : "rgba(255,255,255,0.5)";
-  const arrowColor = project.darkText ? "#000000" : "#ffffff";
+  const metaColor = project.darkText ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.6)";
+  const borderColor = project.darkText ? "rgba(0,0,0,0.15)" : "rgba(255,255,255,0.15)";
 
   return (
+    /* Each wrapper is 100vh — this provides the scroll distance needed */
     <div
       ref={cardRef}
-      className="relative"
-      style={{
-        height: "100vh",
-        zIndex: index + 1,
-      }}
+      style={{ height: "100vh" }}
     >
-      <div
-        className="sticky w-full"
-        style={{ top: `${stickyTop}px` }}
+      {/* The sticky card itself — all cards stick at the SAME top position */}
+      <a
+        href={project.href}
+        className="sticky block no-underline group"
+        style={{
+          position: "sticky",
+          top: `${STICKY_TOP}px`,
+          zIndex: index + 1,
+        }}
       >
-        <a
-          href={project.href}
-          className="block w-full no-underline group"
+        <div
+          className="rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col overflow-hidden shadow-2xl"
+          style={{
+            backgroundColor: project.mainBg,
+            height: `calc(100vh - ${STICKY_TOP + 24}px)`,
+          }}
         >
+          {/* Meta row: year + category */}
+          <div className="flex items-center justify-between pb-4 sm:pb-5"
+            style={{ borderBottom: `1px solid ${borderColor}` }}
+          >
+            <span
+              className="text-sm sm:text-base font-light tracking-wide"
+              style={{
+                fontFamily: "var(--font-body)",
+                color: metaColor,
+              }}
+            >
+              {project.year}
+            </span>
+            <span
+              className="text-sm sm:text-base font-light tracking-wide"
+              style={{
+                fontFamily: "var(--font-body)",
+                color: metaColor,
+              }}
+            >
+              {project.category}
+            </span>
+          </div>
+
+          {/* Title + arrow */}
+          <div className="flex items-center justify-between pt-4 sm:pt-5 mb-5 sm:mb-6 md:mb-8">
+            <h3
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight leading-none"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: textColor,
+              }}
+            >
+              {project.title}
+            </h3>
+
+            <motion.div
+              className="shrink-0 ml-4"
+              style={{ rotate: arrowRotate }}
+            >
+              <svg
+                className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={textColor}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ opacity: 0.7 }}
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </motion.div>
+          </div>
+
+          {/* Image area — fills remaining space */}
           <div
-            className="rounded-2xl p-5 sm:p-8 md:p-12 flex flex-col overflow-hidden"
+            className="flex-1 w-full rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center"
             style={{
-              backgroundColor: project.mainBg,
-              height: `calc(100vh - ${stickyTop + 16}px)`,
-              minHeight: "360px",
+              backgroundColor: project.imageBg,
+              minHeight: 0,
             }}
           >
-            {/* Meta row */}
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full max-h-full max-w-full object-contain"
+              />
+            ) : (
               <span
-                className="text-[11px] sm:text-xs font-light"
+                className="text-sm"
                 style={{
                   fontFamily: "var(--font-body)",
-                  color: metaColor,
-                }}
-              >
-                {project.year}
-              </span>
-              <span
-                className="text-[11px] sm:text-xs font-light"
-                style={{
-                  fontFamily: "var(--font-body)",
-                  color: metaColor,
-                }}
-              >
-                {project.category}
-              </span>
-            </div>
-
-            {/* Title + arrow */}
-            <div className="flex items-center justify-between mb-4 sm:mb-6">
-              <h3
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight leading-none"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  color: textColor,
+                  color: "rgba(0,0,0,0.12)",
                 }}
               >
                 {project.title}
-              </h3>
-
-              <motion.div
-                className="shrink-0 ml-3 sm:ml-4"
-                style={{ rotate: arrowRotate }}
-              >
-                <svg
-                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke={arrowColor}
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </motion.div>
-            </div>
-
-            {/* Image area */}
-            <div
-              className="flex-1 w-full rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center"
-              style={{
-                backgroundColor: project.imageBg,
-                minHeight: 0,
-              }}
-            >
-              {project.image ? (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full max-h-full max-w-full object-contain"
-                />
-              ) : (
-                <span
-                  className="text-sm opacity-15"
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    color: "#000000",
-                  }}
-                >
-                  {project.title}
-                </span>
-              )}
-            </div>
+              </span>
+            )}
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
   );
 }
@@ -203,7 +197,6 @@ export default function Projects() {
             key={project.title}
             project={project}
             index={i}
-            total={projects.length}
           />
         ))}
       </div>
