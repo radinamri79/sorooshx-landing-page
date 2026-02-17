@@ -3,180 +3,146 @@
 import { useState } from "react";
 import Link from "next/link";
 import CTA from "@/components/CTA";
-
-/* ─── Sample blog data ─── */
-interface BlogPost {
-  id: number;
-  title: string;
-  date: string;
-  author: string;
-  authorHref: string;
-  category: string;
-  categoryHref: string;
-  color: string;
-  image?: string;
-}
-
-const allPosts: BlogPost[] = Array.from({ length: 32 }, (_, i) => ({
-  id: i + 1,
-  title: "Engineering a High-Performance SocialFi Ecosystem for 100K+ Users.",
-  date: "feb 15 2026",
-  author: "soroush osivand",
-  authorHref: "#",
-  category: "learning",
-  categoryHref: "#",
-  color: i % 2 === 0 ? "#2563EB" : "#F97316",
-  image: undefined,
-}));
-
-const POSTS_PER_PAGE = 8;
-const TOTAL_PAGES = Math.ceil((allPosts.length - 1) / POSTS_PER_PAGE); // -1 for featured
+import {
+  allPosts,
+  POSTS_PER_PAGE,
+  TOTAL_PAGES,
+  type BlogPost,
+} from "@/data/blogPosts";
 
 /* ─── Blog card ─── */
 function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <article className="flex flex-col">
-      {/* Image placeholder */}
-      <div
-        className="w-full aspect-[4/3] rounded-sm flex items-center justify-center mb-4"
-        style={{ backgroundColor: post.color }}
-      >
-        {post.image ? (
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover rounded-sm"
-          />
-        ) : (
-          <span
-            className="text-base text-black/30"
-            style={{ fontFamily: "var(--font-body)" }}
+    <Link href={`/blog/${post.slug}`} className="no-underline block">
+      <article className="flex flex-col">
+        {/* Image placeholder */}
+        <div
+          className="w-full aspect-[4/3] rounded-sm flex items-center justify-center mb-4"
+          style={{ backgroundColor: post.color }}
+        >
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover rounded-sm"
+            />
+          ) : (
+            <span
+              className="text-base text-black/30"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              {"<img src=\"\"/>"}
+            </span>
+          )}
+        </div>
+
+        {/* Title + arrow */}
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3
+            className="text-base sm:text-lg md:text-xl font-light leading-snug"
+            style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.85)" }}
           >
-            {"<img src=\"\"/>"}
+            {post.title}
+          </h3>
+          <svg
+            className="w-5 h-5 mt-1 shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(255,255,255,0.5)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path d="M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        {/* Meta: date - by author  category */}
+        <div
+          className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          <span style={{ color: "#00FF77" }}>{post.date}</span>
+          <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
+          <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
+          <span className="underline" style={{ color: "#00FF77" }}>
+            {post.author}
           </span>
-        )}
-      </div>
-
-      {/* Title + arrow */}
-      <div className="flex items-start justify-between gap-3 mb-2">
-        <h3
-          className="text-base sm:text-lg md:text-xl font-light leading-snug"
-          style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.85)" }}
-        >
-          {post.title}
-        </h3>
-        <svg
-          className="w-5 h-5 mt-1 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="rgba(255,255,255,0.5)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14" />
-          <path d="M12 5l7 7-7 7" />
-        </svg>
-      </div>
-
-      {/* Meta: date - by author  category */}
-      <div
-        className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
-        style={{ fontFamily: "var(--font-body)" }}
-      >
-        <span style={{ color: "#00FF77" }}>{post.date}</span>
-        <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
-        <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
-        <a
-          href={post.authorHref}
-          className="underline"
-          style={{ color: "#00FF77" }}
-        >
-          {post.author}
-        </a>
-        <a
-          href={post.categoryHref}
-          className="underline"
-          style={{ color: "#00FF77" }}
-        >
-          {post.category}
-        </a>
-      </div>
-    </article>
+          <span className="underline" style={{ color: "#00FF77" }}>
+            {post.category}
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 }
 
 /* ─── Featured (first) post — full width ─── */
 function FeaturedPost({ post }: { post: BlogPost }) {
   return (
-    <article className="mb-10 sm:mb-14">
-      {/* Image placeholder */}
-      <div
-        className="w-full aspect-[16/9] rounded-sm flex items-center justify-center mb-5"
-        style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
-      >
-        {post.image ? (
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-full object-cover rounded-sm"
-          />
-        ) : (
-          <span
-            className="text-base text-white/20"
-            style={{ fontFamily: "var(--font-body)" }}
+    <Link href={`/blog/${post.slug}`} className="no-underline block">
+      <article className="mb-10 sm:mb-14">
+        {/* Image placeholder */}
+        <div
+          className="w-full aspect-[16/9] rounded-sm flex items-center justify-center mb-5"
+          style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+        >
+          {post.image ? (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover rounded-sm"
+            />
+          ) : (
+            <span
+              className="text-base text-white/20"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              {"<img src=\"\"/>"}
+            </span>
+          )}
+        </div>
+
+        {/* Title + arrow */}
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <h2
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-snug"
+            style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.85)" }}
           >
-            {"<img src=\"\"/>"}
+            {post.title}
+          </h2>
+          <svg
+            className="w-6 h-6 sm:w-8 sm:h-8 mt-1 shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(255,255,255,0.5)"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path d="M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        {/* Meta */}
+        <div
+          className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          <span style={{ color: "#00FF77" }}>{post.date}</span>
+          <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
+          <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
+          <span className="underline" style={{ color: "#00FF77" }}>
+            {post.author}
           </span>
-        )}
-      </div>
-
-      {/* Title + arrow */}
-      <div className="flex items-start justify-between gap-4 mb-3">
-        <h2
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-snug"
-          style={{ fontFamily: "var(--font-body)", color: "rgba(255,255,255,0.85)" }}
-        >
-          {post.title}
-        </h2>
-        <svg
-          className="w-6 h-6 sm:w-8 sm:h-8 mt-1 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="rgba(255,255,255,0.5)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14" />
-          <path d="M12 5l7 7-7 7" />
-        </svg>
-      </div>
-
-      {/* Meta */}
-      <div
-        className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
-        style={{ fontFamily: "var(--font-body)" }}
-      >
-        <span style={{ color: "#00FF77" }}>{post.date}</span>
-        <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
-        <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
-        <a
-          href={post.authorHref}
-          className="underline"
-          style={{ color: "#00FF77" }}
-        >
-          {post.author}
-        </a>
-        <a
-          href={post.categoryHref}
-          className="underline"
-          style={{ color: "#00FF77" }}
-        >
-          {post.category}
-        </a>
-      </div>
-    </article>
+          <span className="underline" style={{ color: "#00FF77" }}>
+            {post.category}
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 }
 
