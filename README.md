@@ -8,8 +8,8 @@ A modern, high-performance landing page for CODEFI, a premium software engineeri
 
 The CODEFI landing page showcases the company's services, completed projects, blog content, and vision through an elegant, responsive experience. It's designed to attract enterprise clients and startups looking for cutting-edge engineering solutions.
 
-**Live Demo:** [Coming Soon]  
-**GitHub Repository:** [radinamri79/sorooshx-landing-page](https://github.com/radinamri79/sorooshx-landing-page)
+**Live Demo:** [https://sorooshx-codefi.vercel.app/](https://sorooshx-codefi.vercel.app/)  
+**GitHub Repository:** [radinamri79/sorooshx-codefi](https://github.com/radinamri79/sorooshx-codefi)
 
 ---
 
