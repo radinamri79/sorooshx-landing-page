@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({
   return (
     <>
       {/* ─── Hero: title + project url button ─── */}
-      <section className="pt-[100px] pb-2 sm:pb-4">
+      <section className="w-full pt-[100px] pb-2 sm:pb-4">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
           {/* Project name label */}
           <h2
@@ -97,7 +97,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Overview: image + text ─── */}
-      <section className="mt-10 sm:mt-14">
+      <section className="w-full mt-10 sm:mt-14">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
           <div
             className="rounded-sm overflow-hidden"

@@ -7,7 +7,7 @@ export default function About() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section id="about" className="py-10 md:py-16">
+    <section id="about" className="w-full py-10 md:py-16">
       <div ref={ref} className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
         {/* Section label */}
         <motion.div

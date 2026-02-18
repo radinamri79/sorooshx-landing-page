@@ -143,6 +143,7 @@ export default function ProjectGallery({ projects }: { projects: Project[] }) {
 
   return (
     <section
+      className="w-full"
       ref={sectionRef}
       style={{ height: `${cardCount * 100}vh` }}
     >

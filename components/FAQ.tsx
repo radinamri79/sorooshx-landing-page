@@ -42,7 +42,7 @@ export default function FAQ() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="faq" className="py-10 md:py-16">
+    <section id="faq" className="w-full py-10 md:py-16">
       <div ref={ref} className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
         {/* Section label */}
         <motion.div

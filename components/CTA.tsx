@@ -7,7 +7,7 @@ export default function CTA() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section id="contact" className="py-16 md:py-28">
+    <section id="contact" className="w-full py-16 md:py-28">
       <div
         ref={ref}
         className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 flex flex-col items-center text-center"

@@ -14,7 +14,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer
-      className="py-8 md:py-10"
+      className="w-full py-8 md:py-10\"
       style={{
         borderTop: "1px solid transparent",
         backgroundImage: "linear-gradient(#000, #000), linear-gradient(to right, transparent, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 75%, transparent)",

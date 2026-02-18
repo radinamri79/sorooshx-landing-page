@@ -161,6 +161,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
+      className="w-full"
       style={{ height: `${CARD_COUNT * 100}vh` }}
     >
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 h-full">

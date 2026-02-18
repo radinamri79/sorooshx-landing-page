@@ -63,7 +63,8 @@ export default async function BlogDetailPage({
       </div>
 
       {/* Post title */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
+      <section className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
         <h1
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-snug"
           style={{
@@ -73,74 +74,80 @@ export default async function BlogDetailPage({
         >
           {post.title}
         </h1>
+        </div>
       </section>
 
       {/* Featured image */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
-        <div
-          className="w-full aspect-[16/9] rounded-sm flex items-center justify-center"
-          style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
-        >
-          {post.image ? (
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-full object-cover rounded-sm"
-            />
-          ) : (
-            <span
-              className="text-base text-white/20"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
-              {'<img src=""/>'}
-            </span>
-          )}
+      <section className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
+          <div
+            className="w-full aspect-[16/9] rounded-sm flex items-center justify-center"
+            style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+          >
+            {post.image ? (
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover rounded-sm"
+              />
+            ) : (
+              <span
+                className="text-base text-white/20"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {'<img src=""/>'}
+              </span>
+            )}
+          </div>
         </div>
       </section>
 
       {/* Divider + Meta */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-10 sm:pb-14">
-        <hr
-          className="border-0 mb-4"
-          style={{
-            height: "1px",
-            backgroundColor: "rgba(255,255,255,0.1)",
-          }}
-        />
-        <div
-          className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          <span style={{ color: "#00FF77" }}>{post.date}</span>
-          <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
-          <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
-          <a
-            href={post.authorHref}
-            className="underline"
-            style={{ color: "#00FF77" }}
+      <section className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-10 sm:pb-14">
+          <hr
+            className="border-0 mb-4"
+            style={{
+              height: "1px",
+              backgroundColor: "rgba(255,255,255,0.1)",
+            }}
+          />
+          <div
+            className="flex flex-wrap items-center gap-x-2 text-xs sm:text-sm"
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            {post.author}
-          </a>
-          <a
-            href={post.categoryHref}
-            className="underline"
-            style={{ color: "#00FF77" }}
-          >
-            {post.category}
-          </a>
+            <span style={{ color: "#00FF77" }}>{post.date}</span>
+            <span style={{ color: "rgba(255,255,255,0.35)" }}>-</span>
+            <span style={{ color: "rgba(255,255,255,0.35)" }}>by</span>
+            <a
+              href={post.authorHref}
+              className="underline"
+              style={{ color: "#00FF77" }}
+            >
+              {post.author}
+            </a>
+            <a
+              href={post.categoryHref}
+              className="underline"
+              style={{ color: "#00FF77" }}
+            >
+              {post.category}
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Blog content */}
-      <article className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-16 sm:pb-24">
-        <div
-          className="max-w-none space-y-6"
-          style={{
-            fontFamily: "var(--font-body)",
-            color: "rgba(255,255,255,0.85)",
-            lineHeight: 1.8,
-          }}
-        >
+      <article className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-16 sm:pb-24">
+          <div
+            className="max-w-none space-y-6"
+            style={{
+              fontFamily: "var(--font-body)",
+              color: "rgba(255,255,255,0.85)",
+              lineHeight: 1.8,
+            }}
+          >
           {paragraphs.map((p, i) => {
             const trimmed = p.trim();
             if (!trimmed) return null;
@@ -185,6 +192,7 @@ export default async function BlogDetailPage({
               </p>
             );
           })}
+        </div>
         </div>
       </article>
 

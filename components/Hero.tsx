@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex items-end pt-[83px] pb-4">
+    <section className="relative flex items-end pt-[100px] pb-4 w-full">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10 py-10 sm:py-12 md:py-20">
         {/* Main headline */}
         <motion.h1
@@ -79,7 +79,7 @@ export default function Hero() {
             border: "1px solid rgba(255,255,255,0.5)",
             borderRadius: "4px",
             backgroundColor: "transparent",
-            color: "#ffffff",
+            color: "rgba(255,255,255,0.8)",
             textDecoration: "none",
             letterSpacing: "0px",
             transition: "all 0.3s",

@@ -231,12 +231,15 @@ export default function BlogPage() {
       </div>
 
       {/* Featured post */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
-        <FeaturedPost post={featured} />
+      <section className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+          <FeaturedPost post={featured} />
+        </div>
       </section>
 
       {/* Blog grid — 2 columns */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="w-full">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-10 sm:gap-y-14">
           {pagePosts.map((post) => (
             <BlogCard key={post.id} post={post} />
@@ -248,8 +251,7 @@ export default function BlogPage() {
           currentPage={currentPage}
           totalPages={TOTAL_PAGES}
           onPageChange={handlePageChange}
-        />
-      </section>
+        />        </div>      </section>
 
       {/* CTA — same as home page */}
       <CTA />
