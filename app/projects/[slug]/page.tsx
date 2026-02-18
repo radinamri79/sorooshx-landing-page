@@ -292,16 +292,6 @@ export default async function ProjectDetailPage({
                     }}
                   />
                 )}
-                {/* Bottom border for last row */}
-                {row === totalRows - 1 && (
-                  <span
-                    className="absolute bottom-0 left-0 right-0 h-[1px]"
-                    style={{
-                      background:
-                        "linear-gradient(to right, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent)",
-                    }}
-                  />
-                )}
                 <h4
                   className="text-base sm:text-lg font-semibold mb-3"
                   style={{

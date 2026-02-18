@@ -42,23 +42,26 @@ export default function Services() {
   return (
     <section id="services" className="py-10 md:py-16">
       <div ref={ref} className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
-        {/* Section title */}
+        {/* Section title on gradient line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="pt-6 mb-12 text-center"
-          style={{
-            borderTop: "1px solid transparent",
-            backgroundImage: "linear-gradient(#000, #000), linear-gradient(to right, transparent, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 75%, transparent)",
-            backgroundOrigin: "border-box",
-            backgroundClip: "padding-box, border-box",
-          }}
+          className="relative flex items-center justify-center mb-12 pt-14 sm:pt-20 pb-8 sm:pb-12"
         >
           <span
-            className="text-sm sm:text-base font-light text-white"
+            className="absolute inset-x-0 h-[1px]"
+            style={{
+              background:
+                "linear-gradient(to right, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent)",
+            }}
+          />
+          <span
+            className="relative z-10 px-4 text-sm sm:text-base"
             style={{
               fontFamily: "var(--font-body)",
+              color: "rgba(255,255,255,0.45)",
+              backgroundColor: "#000",
             }}
           >
             services
@@ -99,16 +102,6 @@ export default function Services() {
                     style={{
                       background:
                         "linear-gradient(to bottom, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent)",
-                    }}
-                  />
-                )}
-                {/* Bottom border for last row (gradient faded) */}
-                {row === totalRows - 1 && (
-                  <span
-                    className="absolute bottom-0 left-0 right-0 h-[1px]"
-                    style={{
-                      background:
-                        "linear-gradient(to right, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent)",
                     }}
                   />
                 )}
