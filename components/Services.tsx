@@ -41,7 +41,7 @@ export default function Services() {
 
   return (
     <section id="services" className="w-full py-10 md:py-16">
-      <div ref={ref} className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <div ref={ref} className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         {/* Section title on gradient line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

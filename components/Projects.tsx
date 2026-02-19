@@ -74,13 +74,12 @@ function StackedCard({
     >
       <Link href={`/projects/${project.slug}`} className="block no-underline h-full">
         <div
-          className="h-full p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col"
+          className="h-full flex flex-col"
           style={{ backgroundColor: project.mainBg }}
         >
           {/* Meta row: year + category */}
           <div
-            className="flex items-center justify-between pb-4 sm:pb-5"
-            style={{ borderBottom: `1px solid ${borderColor}` }}
+            className="flex items-center justify-between px-6 sm:px-8 md:px-10 lg:px-12 pt-6 sm:pt-8 md:pt-10 lg:pt-12 pb-4 sm:pb-5"
           >
             <span
               className="text-sm sm:text-base font-light tracking-wide"
@@ -96,8 +95,11 @@ function StackedCard({
             </span>
           </div>
 
+          {/* Full-width border */}
+          <div style={{ borderBottom: `1px solid ${borderColor}` }} />
+
           {/* Title + arrow */}
-          <div className="flex items-center justify-between pt-4 sm:pt-5 mb-5 sm:mb-6 md:mb-8">
+          <div className="flex items-center justify-between px-6 sm:px-8 md:px-10 lg:px-12 pt-4 sm:pt-5 mb-5 sm:mb-6 md:mb-8">
             <h3
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight leading-none"
               style={{ fontFamily: "var(--font-heading)", color: textColor }}
@@ -107,11 +109,11 @@ function StackedCard({
 
             <motion.div className="shrink-0 ml-4" style={{ rotate: arrowRotate }}>
               <svg
-                className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke={textColor}
-                strokeWidth="1.5"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 style={{ opacity: 0.7 }}
@@ -124,23 +126,28 @@ function StackedCard({
 
           {/* Image area — fills remaining space */}
           <div
-            className="flex-1 w-full rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center"
-            style={{ backgroundColor: project.imageBg, minHeight: 0 }}
+            className="flex-1 w-full px-6 sm:px-8 md:px-10 lg:px-12 pb-6 sm:pb-8 md:pb-10 lg:pb-12"
+            style={{ minHeight: 0 }}
           >
-            {project.image ? (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-full max-h-full max-w-full object-contain"
-              />
-            ) : (
-              <span
-                className="text-sm"
-                style={{ fontFamily: "var(--font-body)", color: "rgba(0,0,0,0.12)" }}
-              >
-                {project.title}
-              </span>
-            )}
+            <div
+              className="w-full h-full rounded-lg sm:rounded-xl overflow-hidden flex items-center justify-center"
+              style={{ backgroundColor: project.imageBg }}
+            >
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full max-h-full max-w-full object-contain"
+                />
+              ) : (
+                <span
+                  className="text-sm"
+                  style={{ fontFamily: "var(--font-body)", color: "rgba(0,0,0,0.12)" }}
+                >
+                  {project.title}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </Link>
@@ -164,7 +171,7 @@ export default function Projects() {
       className="w-full"
       style={{ height: `${CARD_COUNT * 100}vh` }}
     >
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 h-full">
+      <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 h-full">
         {/* Sticky container — stays pinned as user scrolls through the tall section */}
         <div
           style={{

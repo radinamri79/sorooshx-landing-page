@@ -16,8 +16,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex items-end pt-[100px] pb-4 w-full">
-      <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 md:px-10 py-10 sm:py-12 md:py-20">
+    <section className="relative flex items-end pt-[100px] pb-16 md:pb-24 w-full">
+      <div className="mx-auto w-full max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 py-10 sm:py-12 md:py-24 lg:py-28">
         {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

@@ -55,7 +55,7 @@ export default async function ProjectDetailPage({
     <>
       {/* ─── Hero: title + project url button ─── */}
       <section className="w-full pt-[100px] pb-2 sm:pb-4">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
           {/* Project name label */}
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6 sm:mb-8"
@@ -98,7 +98,7 @@ export default async function ProjectDetailPage({
 
       {/* ─── Overview: image + text ─── */}
       <section className="w-full mt-10 sm:mt-14">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
           <div
             className="rounded-sm overflow-hidden"
             style={{ backgroundColor: project.mainBg }}
@@ -162,7 +162,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Problem ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="problem" />
         <div className="max-w-[800px] mx-auto text-center pb-4">
           <p
@@ -182,7 +182,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Solution ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="solution" />
         <div className="max-w-[800px] mx-auto text-center pb-4">
           <p
@@ -202,7 +202,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Meta Data ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="meta data" />
         <div className="max-w-[800px] mx-auto space-y-6 sm:space-y-8 pb-4">
           {project.meta.map((item) => (
@@ -234,7 +234,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Metrics ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="metrics" />
         <div className="grid grid-cols-2 gap-8 sm:gap-12 max-w-[800px] mx-auto pb-4">
           {project.metrics.map((m) => (
@@ -263,7 +263,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Stack (gradient borders) ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="stack" />
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-[800px] mx-auto pb-4">
           {project.stack.map((s, i) => {
@@ -318,7 +318,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* ─── Gallery (stacked card scroll — same as home) ─── */}
-      <section className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <section className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <SectionDivider label="gallery" />
       </section>
       <ProjectGallery projects={otherProjects} />

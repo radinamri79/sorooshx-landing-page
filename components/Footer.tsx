@@ -22,7 +22,7 @@ export default function Footer() {
         backgroundClip: "padding-box, border-box",
       }}
     >
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+      <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           {/* Copyright */}
           <span

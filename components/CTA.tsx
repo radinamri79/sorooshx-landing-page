@@ -10,7 +10,7 @@ export default function CTA() {
     <section id="contact" className="w-full py-16 md:py-28">
       <div
         ref={ref}
-        className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 flex flex-col items-center text-center"
+        className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 flex flex-col items-center text-center"
       >
         {/* Headline */}
         <motion.h2

@@ -210,7 +210,7 @@ export default function BlogPage() {
     <>
       {/* Breadcrumb */}
       <div className="pt-[100px] pb-6 sm:pb-8">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
           <nav
             className="text-xs sm:text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -232,14 +232,14 @@ export default function BlogPage() {
 
       {/* Featured post */}
       <section className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
           <FeaturedPost post={featured} />
         </div>
       </section>
 
       {/* Blog grid — 2 columns */}
       <section className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-10 sm:gap-y-14">
           {pagePosts.map((post) => (
             <BlogCard key={post.id} post={post} />

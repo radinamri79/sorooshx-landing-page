@@ -45,7 +45,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[83px] max-w-[1200px] items-center justify-between px-4 sm:px-6 md:px-10">
+      <div className="mx-auto flex h-[83px] max-w-[1200px] 2xl:max-w-[1600px] items-center justify-between px-4 sm:px-6 md:px-10">
         {/* Logo */}
         <Link
           href="/"

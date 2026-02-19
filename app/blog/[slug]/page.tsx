@@ -24,7 +24,7 @@ export default async function BlogDetailPage({
     <>
       {/* Breadcrumb */}
       <div className="pt-[100px] pb-6 sm:pb-8">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10">
           <nav
             className="text-xs sm:text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -64,7 +64,7 @@ export default async function BlogDetailPage({
 
       {/* Post title */}
       <section className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
         <h1
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-snug"
           style={{
@@ -79,7 +79,7 @@ export default async function BlogDetailPage({
 
       {/* Featured image */}
       <section className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 pb-6 sm:pb-8">
           <div
             className="w-full aspect-[16/9] rounded-sm flex items-center justify-center"
             style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
@@ -104,7 +104,7 @@ export default async function BlogDetailPage({
 
       {/* Divider + Meta */}
       <section className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-10 sm:pb-14">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 pb-10 sm:pb-14">
           <hr
             className="border-0 mb-4"
             style={{
@@ -139,7 +139,7 @@ export default async function BlogDetailPage({
 
       {/* Blog content */}
       <article className="w-full">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 md:px-10 pb-16 sm:pb-24">
+        <div className="mx-auto max-w-[1200px] 2xl:max-w-[1600px] px-4 sm:px-6 md:px-10 pb-16 sm:pb-24">
           <div
             className="max-w-none space-y-6"
             style={{
