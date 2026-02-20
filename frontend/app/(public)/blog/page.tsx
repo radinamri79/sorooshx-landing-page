@@ -1,14 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import {
-  allPosts,
+  allPosts as staticPosts,
   POSTS_PER_PAGE,
-  TOTAL_PAGES,
   type BlogPost,
 } from "@/data/blogPosts";
+import { fetchBlogs, type ApiBlog } from "@/lib/api";
+
+/* Convert API blog to the BlogPost shape used by components */
+function apiBlogToPost(blog: ApiBlog): BlogPost {
+  return {
+    id: blog.id + 10000, // offset to avoid ID collision with static posts
+    slug: blog.slug,
+    title: blog.title,
+    date: blog.date,
+    author: blog.author,
+    authorHref: blog.author_href || "#",
+    category: blog.category_name,
+    categoryHref: "#",
+    color: blog.color,
+    image: blog.image_url || undefined,
+    content: blog.content,
+  };
+}
 
 /* ─── Blog card ─── */
 function BlogCard({ post }: { post: BlogPost }) {
@@ -195,7 +212,24 @@ function Pagination({
 /* ─── Blog page ─── */
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [allPosts, setAllPosts] = useState<BlogPost[]>(staticPosts);
 
+  useEffect(() => {
+    // Fetch API blogs and prepend them to static posts
+    fetchBlogs({ published: "true", page_size: "100" })
+      .then((data) => {
+        const apiPosts = data.results.map(apiBlogToPost);
+        if (apiPosts.length > 0) {
+          // API blogs first, then static posts
+          setAllPosts([...apiPosts, ...staticPosts]);
+        }
+      })
+      .catch(() => {
+        // Fallback: just use static posts
+      });
+  }, []);
+
+  const totalPages = Math.ceil((allPosts.length - 1) / POSTS_PER_PAGE);
   const featured = allPosts[0];
   const gridPosts = allPosts.slice(1);
   const startIdx = (currentPage - 1) * POSTS_PER_PAGE;
@@ -249,7 +283,7 @@ export default function BlogPage() {
         {/* Pagination */}
         <Pagination
           currentPage={currentPage}
-          totalPages={TOTAL_PAGES}
+          totalPages={totalPages}
           onPageChange={handlePageChange}
         />        </div>      </section>
 

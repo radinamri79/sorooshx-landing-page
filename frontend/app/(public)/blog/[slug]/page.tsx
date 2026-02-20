@@ -3,8 +3,22 @@ import Link from "next/link";
 import { getPostBySlug, getAllSlugs } from "@/data/blogPosts";
 import CTA from "@/components/CTA";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
+}
+
+async function fetchApiBlog(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/api/blogs/by-slug/${encodeURIComponent(slug)}/`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
 }
 
 export default async function BlogDetailPage({
@@ -13,7 +27,34 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+
+  // Try API first, then fall back to static
+  const apiBlog = await fetchApiBlog(slug);
+  const staticPost = getPostBySlug(slug);
+
+  const post = apiBlog
+    ? {
+        title: apiBlog.title,
+        date: apiBlog.date,
+        author: apiBlog.author,
+        authorHref: apiBlog.author_href || "#",
+        category: apiBlog.category_name,
+        categoryHref: "#",
+        image: apiBlog.image_url,
+        content: apiBlog.content,
+      }
+    : staticPost
+    ? {
+        title: staticPost.title,
+        date: staticPost.date,
+        author: staticPost.author,
+        authorHref: staticPost.authorHref,
+        category: staticPost.category,
+        categoryHref: staticPost.categoryHref,
+        image: staticPost.image,
+        content: staticPost.content,
+      }
+    : null;
 
   if (!post) return notFound();
 
@@ -148,7 +189,7 @@ export default async function BlogDetailPage({
               lineHeight: 1.8,
             }}
           >
-          {paragraphs.map((p, i) => {
+          {paragraphs.map((p: string, i: number) => {
             const trimmed = p.trim();
             if (!trimmed) return null;
 
