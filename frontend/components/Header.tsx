@@ -53,7 +53,7 @@ export default function Header() {
         >
           <span
             style={{ fontFamily: "var(--font-heading)" }}
-            className="text-white text-[24px] font-semibold tracking-tight"
+            className="text-white text-[30px] font-semibold tracking-tight"
           >
             codefi
           </span>
